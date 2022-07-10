@@ -1,0 +1,30 @@
+ion-content {
+
+  ion-grid {
+
+    ion-row {
+      margin-top: 2.8125rem;
+
+      ion-col {
+        ion-text {
+          margin-left: 16px;
+          font-size: 2rem;
+          font-weight: bold;
+        }
+      }
+
+      ion-col {
+
+        ion-card {
+
+          ion-item {
+            display: flex;
+
+            h2 {
+            }
+          }
+        }
+      }
+    }
+  }
+}
