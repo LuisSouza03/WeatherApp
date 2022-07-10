@@ -22,21 +22,46 @@
 
       <ion-col>
 
-        <ion-card>
-
-          <ion-item>
-            <h2> {{ city}} </h2>
-            <p> {{ temp }}</p>
-          </ion-item>
+        <ion-card (click)="moreInfo(city)" id="open-modal" [style.background-image]="'url(' + photo + ')'">
 
           <ion-card-content>
 
+            <div class="text">
+              <ion-text>{{ city }}</ion-text>
+              <ion-text>{{ temp }}°C</ion-text>
+            </div>
+
+            <h2>{{ description }}</h2>
+            <h2> {{ hour }}</h2>
           </ion-card-content>
         </ion-card>
       </ion-col>
 
     </ion-row>
   </ion-grid>
+
+  <ion-modal #modal trigger="open-modal">
+    <ng-template>
+      <ion-content>
+        <ion-toolbar>
+          <ion-title>Modal</ion-title>
+          <ion-buttons slot="end">
+            <ion-button color="light" (click)="modal.dismiss()">Close</ion-button>
+          </ion-buttons>
+        </ion-toolbar>
+
+        <h2 class="ion-margin">Próximos 10 dias</h2>
+        <ion-list *ngFor="let infoWeather of forecast">
+          <ion-item style="height: 200px; display: flex;">
+            <p>{{ infoWeather.date }} ( {{ infoWeather.weekday }} )</p>
+            <p>Min: {{ infoWeather.min }} Max: {{ infoWeather.max }}</p>
+            <p>Description: {{ infoWeather.description }}</p>
+          </ion-item>
+        </ion-list>
+
+      </ion-content>
+    </ng-template>
+  </ion-modal>
 
 
 

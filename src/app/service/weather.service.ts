@@ -20,6 +20,7 @@ export class WeatherService {
   ) { }
 
   async getWeather(city: string) {
+
     const citySearch = this.removeAccents(city);
 
     return this.httpClient.get<any>(`${URLAPI}format=json-cors&appid=${KEY}&q=${citySearch}`)

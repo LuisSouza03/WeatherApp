@@ -16,15 +16,50 @@ ion-content {
       ion-col {
 
         ion-card {
+          display: flex;
+          height: 120px;
+          box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
 
-          ion-item {
-            display: flex;
+          ion-card-content {
+            width: 100%;
+
+            .text {
+              display: flex;
+              justify-content: space-between;
+
+              ion-text {
+                color: #ffffff;
+                margin: 0;
+              }
+            }
 
             h2 {
+              color: #ffffff;
+
             }
           }
         }
       }
     }
   }
+}
+
+ion-modal {
+  --height: 80%;
+  --border-radius: 16px;
+  --box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+}
+
+ion-modal::part(backdrop) {
+  background: rgba(209, 213, 219);
+  opacity: 1;
+}
+
+ion-modal ion-toolbar {
+  --background: rgb(14 116 144);
+  --color: white;
+}
+
+.infoDays {
+  display: flex;
 }
